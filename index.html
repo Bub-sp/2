@@ -1,0 +1,802 @@
+<html>
+<head>
+   <meta content="width=device-width, initial-scale=1" name="viewport" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">   
+</head>
+<style>
+
+*{
+   font-family: "Montserrat", sans-serif;
+   font-optical-sizing: auto;
+}
+body {
+   font-family: Arial, sans-serif;
+   padding: 0;
+   color: #333;
+   margin: 0;
+}
+header {
+   background-image: url("files/Header-5.png");
+   background-repeat: no-repeat;
+   background-size:cover;
+  margin: auto;
+   background-color: cadetblue;
+   padding: 20px;
+   text-align: center;
+   height: fit-content; 
+   display: flex;
+   flex-direction: column;
+}
+header div{
+   @media (max-width: 480px){
+      flex-direction: column;
+      align-items: center;
+   };
+}
+.label{
+   @media (max-width:480px){
+      text-align: center !important;
+   }
+}
+.label-buttons{
+   @media (max-width:480px){
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+   }
+}
+.label button{
+   border-radius: 37px; 
+   padding: 10px 36px 10px 36px; 
+   font-size: 14px; 
+   font-weight: 600; 
+   height: 48px;
+   @media (max-width:480px){
+      width: fit-content;
+   }
+}
+.nav-desktop {
+   width: 95%; 
+   display: flex;
+   justify-content: flex-end;
+   margin-bottom: 90px;
+   text-align: right;
+   @media (max-width: 480px){
+      display: none;
+   };
+}
+.nav-desktop img{
+   width: 24px;
+   height: 24px;  
+}
+.nav-desktop a {
+   margin-right: 20px;
+   color: #333;
+   text-decoration: none;
+}
+.nav-desktop span{
+   position: absolute; 
+   left: 13%; 
+   font-size: 24px; 
+   font-weight: 700;
+}
+.nav-mobile{
+   display: flex;
+   flex-direction: column;
+   @media (min-width: 481px) {
+      display: none;
+   }
+}
+.nav-mobile .controls{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   margin-bottom: 50px;
+}
+.nav-mobile .controls div{
+   margin-bottom: 0px;
+}
+.nav-mobile .controls div img{
+   width: 24px;
+   height: 24px;
+}
+.nav-mobile .anchors{
+   font-size: 30px;
+   display: flex;
+   row-gap: 30px;
+}
+.nav-mobile .anchors a {
+   color: #737373;
+   text-decoration: none;
+}
+
+h1 {
+   font-size: 3em;
+   margin-bottom: 20px;
+}
+h2{
+   font-weight: 700; 
+   font-size: 40px;
+   color: #252B42;
+}
+button {
+   background-color: #ff7043;
+   color: #fff;
+   border: none;
+   padding: 15px 40px 15px 40px;
+   font-size: 1em;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+button:hover {
+   background-color: #ff522a;
+}
+
+section {
+   padding:80px 195px;
+   text-align: center;
+   @media (max-width: 480px){
+      padding: 40px;
+   };
+}
+
+#booking{ 
+   border-radius: 10px;
+   height: fit-content;
+   width: 328px;
+   box-shadow: 0px 13px 19px #a4a4a4;
+   @media (max-width: 480px){
+      margin-top: 80px;
+   };
+}
+#booking h2{
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+#booking div{  
+   padding-left: 40px;
+  display: block;
+  width: 248px;
+  margin-top: 10px;
+}
+
+#booking div p{
+   font-weight: 600;
+   size: 14px;
+  margin: 0px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+#booking div input{
+   border: solid 1px #BDBDBD;
+  background: #F9F9F9;
+  border-radius: 5px;
+  padding-left: 24px;
+}
+#booking div select{
+   border: solid 1px #BDBDBD;
+  background: #F9F9F9;
+  border-radius: 5px;
+  padding-left: 24px;
+  color: #737373;
+}
+#booking button{
+   padding: 15px 40px 15px 40px;
+   width: 245px;
+   margin-top: 40px;
+   margin-bottom: 40px;
+}
+#booking, #reviews {
+   background-color: #FFFFFF;
+}
+#booking form button {
+   margin-top: 20px;
+}
+
+.booking-appointment{
+  width: 245px;
+  height: 50px;
+}
+#intro h2{
+   font-weight: 700;
+   font-size: 40px;
+}
+#intro img{
+   width: 72px;
+   height: 72px;
+}
+#intro div{
+   display: flex;
+   gap: 30px;
+   justify-content: center;
+   @media (max-width: 480px){
+      flex-direction: column;
+      align-items: center;
+   };
+}
+#block{
+   border-radius: 10px;
+   flex-direction: column;
+   background: #D9EDFF;
+   width: 328px;
+   height: 385px;
+   display: flex;
+   justify-content: flex-end !important;
+}
+#block-header{
+   height: fit-content;
+   width: 100%;
+   @media (max-width: 480px){
+      flex-direction: row;
+   };
+}
+#block-header h5{
+   margin-top: auto;
+   margin-bottom: auto;
+}
+#block-content{
+   background: #FFFFFF;
+   height: 253px;
+   width: calc(100% - 2px);  
+   border-radius: 11px; 
+   border: 1px solid #A9D6FF;
+}
+#block-content ul{
+   color: #737373;
+   font-size: 14px;
+   font-weight: 600;
+   margin-top: 30px;
+}
+#block-content ul a{
+   color: #FF7B47;
+}
+#block-content ul li{
+   margin-bottom: 13px;
+}
+
+#reviews .review {
+   display: inline-block;
+   width: fit-content;
+   height: fit-content;
+   margin: 1%;
+   padding: 30px 35px 30px 35px;
+   background-color: #FFFFFF;
+   border-radius: 5px;
+   border: 1px solid #DEDEDE;
+
+}
+.review img{
+   align-items: start;
+}
+.review p{
+   margin-top: 20px;
+   font-size: 14px;
+   font-weight: 600;
+   line-height: 24px;
+   letter-spacing: 0.20000000298023224px;
+   text-align: left;
+   text-underline-position: from-font;
+   text-decoration-skip-ink: none;
+   color: #737373;
+
+}
+#reviews div{
+   @media (max-width: 480px){
+      flex-direction: column;
+      gap: 30px;
+   };
+}
+.review div div{
+   width: fit-content;
+}
+.author{
+   display: flex; 
+   width: fit-content; 
+   height: fit-content;
+   @media (max-width:480px) {
+      gap:0px !important;
+      flex-direction: row !important;
+   }
+}
+.profile{
+   margin: auto; 
+   margin-left: 15px;
+   text-align: left;
+
+}
+.team div{
+   @media (max-width:480px) {
+      flex-direction: column;
+   }
+}
+
+.member{
+   border: 1px solid #EEEEEE;
+   width: 328px;
+   padding-bottom: 30px;
+}
+
+.Consulting{
+   display: flex; 
+   justify-content: space-between; 
+   padding-top: 40px;
+   padding-bottom: 40px;
+   @media (max-width:480px) {
+      flex-direction: column;
+   }
+}
+.Consulting button{
+   @media (max-width:480px) {
+      width: 100%;
+   }
+}
+
+
+footer {
+   background-color: #252B42;
+   color: #fff;
+   padding: 195px;
+   padding-top: 40px;
+   padding-bottom: 25px;
+   text-align: center;
+   @media (max-width:480px) {
+      padding: 40px;
+   }
+}
+footer .media{
+   display: flex;  
+   justify-content: space-between; 
+   align-items: center;
+   @media (max-width:480px) {
+      flex-direction: column;
+      align-items: flex-start;
+   }
+}
+
+footer a {
+   color: #fff;
+   text-decoration: none;
+   margin: 0 20px;
+}
+#appointment{
+   background-size:cover;
+   display: flex;
+   align-items: flex-start;
+   flex-direction: column;
+}
+#appointment span{
+   font-size: 16px;
+   font-weight: 700;
+   line-height: 24px;
+   letter-spacing: 0.10000000149011612px;
+   text-align: center;
+   text-underline-position: from-font;
+   text-decoration-skip-ink: none;
+}
+#appointment form{
+   width: 50%;
+   @media (max-width:480px) {
+      width: 100%;
+   }
+}
+#appointment form div{
+   @media (max-width:480px) {
+      flex-direction: column;
+   }
+}
+#appointment input{
+   width: 50%;
+   height: 50px;
+   border: solid 1px #BDBDBD;
+  background: #F9F9F9;
+  border-radius: 5px;
+  padding-left: 24px;
+  @media (max-width:480px) {
+      width: 100%;
+  }
+}
+#appointment select{
+   width: 50%;
+   height: 50px;
+   border: solid 1px #BDBDBD;
+   background: #F9F9F9;
+   border-radius: 5px;
+   padding-left: 24px;
+   color: #737373;
+   @media (max-width:480px) {
+      width: 100%;
+   }
+}
+#appointment form div{
+   margin-bottom: 20px;
+   gap:20px;
+   display: flex;
+   justify-content: center;
+}
+#appointment form textarea{
+   padding: 24px 16px;
+   background: #F9F9F9;
+   margin-bottom: 40PX;
+   border: 1px solid #BDBDBD;
+   width: 100%;
+   height: 140px;
+}
+#appointment form button{
+   display: block;
+   padding: 15px 40px 15px 40px;
+   font-size: 14px;
+   font-weight: 700;
+   line-height: 28px;
+   letter-spacing: 0.20000000298023224px;
+   text-align: center;
+   @media (max-width:480px) {
+      width: 100%;
+   }
+}
+
+.information{
+   @media (max-width:480px) {
+      flex-direction: column;
+   }
+}
+footer hr{
+   @media (max-width:480px) {
+      display: none;
+   }
+}
+.information div h5{
+   font-weight: 700;
+   font-size: 16px;
+}
+.information div p{
+   font-weight: 600;
+   font-size: 14px;
+   color: #BDBDBD;
+}
+.copyright{
+   background: #17213C; 
+   padding: 25px 195px 25px 195px;
+   @media (max-width:480px) {
+      padding: 25px 96px;
+      text-align: center;
+   }
+}
+
+</style>
+<body>
+   <header>
+       <nav class="nav-desktop">
+          <span>Publist</span>
+          <a href="#">Home</a>
+          <a href="#">Products</a>
+          <a href="#">Pricing</a>
+          <a href="#">Contact</a>
+          <img style="margin-right: 20px;" src="files/search.svg">
+          <img style="margin-right: 10%;" src="files/cart.svg">
+          <img src="files/Vector.svg">
+       </nav>
+       <nav class="nav-mobile">
+         <div class="controls">
+            <span>Publist</span>
+            <div>
+               <img style="margin-right: 24px;" src="files/cart.svg">
+               <img style="margin-right: 20px;" src="files/search.svg">
+               <img src="files/Vector.svg">
+            </div>
+         </div>
+         <div class="anchors">
+          <a href="#">Home</a>
+          <a href="#">Products</a>
+          <a href="#">Pricing</a>
+          <a href="#">Contact</a>
+         </div>
+       </nav>
+       <div style="display: flex; justify-content: space-around;">
+          <div class="label" style="text-align:left; align-content:center; justify-content: space-around">
+            <h1>Business Advisory <br>
+               Service Provider</h1>
+            <p>We know how large objects will act, but things on a<br> 
+               small scale.</p>
+            <div class="label-buttons">
+               <button >Get Quote Now</button>
+               <button style="background: none; border: 1px #0D5C63 solid; color: #0D5C63;">Learn more</button>
+            </div>
+          </div>
+          <form id="booking">
+            <h3 style="font-weight: 700; font-size: 24px;">Book Appointment</h3>
+            <div>
+              <p>Name *</p>
+              <input class="booking-appointment" type="text" placeholder="Full Name">
+            </div>
+            <div>
+              <p>Email *</p>
+              <input class="booking-appointment" type="text" placeholder="example@gmail.com">
+            </div>
+            <div>
+              <p>Department *</p>
+              <select class="booking-appointment" type="text">
+               <option>Please Select</option>
+               <option>Option</option>
+              </select>
+            </div>
+            <div>
+              <p>Time *</p>
+              <select class="booking-appointment" type="text">
+               <option>4:00 Available</option>
+               <option>Option</option>
+              </select>
+            </div>
+            <button>Book Appointment</button>
+          </form>
+        </div>
+   </header>
+   <section id="intro">
+       <h2>Industry</h2>
+       <p style="color: #737373;">Problems trying to resolve the conflict between<br>
+         the two major realms of Classical physics: Newtonian mechanics.</p>
+      <div style="margin-top: 80px;">
+         <div id="block">
+            <div id="block-header">
+               <img src="files/Business & Finance.svg">
+               <h5>Business & Finance</h5>
+            </div>
+            <div id="block-content">
+               <ul style="text-align: left; list-style-type: none; width: 100%;">
+                  <li>- The best products start<br>  
+                     with Figma</li>
+                  <li>- Design with real data</li>
+                  <li>- Lightning fast prototyping</li>
+                  <li>- Fastest way to organize</li>
+                  <li>- Work at the speed of thought.</li>
+                  <a>Learn More</a>
+               </ul>
+            </div>
+         </div>
+         <div id="block">
+            <div id="block-header">
+               <img src="files/travel.svg">
+               <h5>Travel & Aviation</h5>
+            </div>
+            <div id="block-content">
+               <ul style="text-align: left; list-style-type: none; width: 100%;">
+                  <li>- The best products start<br>  
+                     with Figma</li>
+                  <li>- Design with real data</li>
+                  <li>- Lightning fast prototyping</li>
+                  <li>- Fastest way to organize</li>
+                  <li>- Work at the speed of thought.</li>
+                  <a>Learn More</a>
+               </ul>
+            </div>
+         </div>
+         <div id="block">
+            <div id="block-header">
+               <img src="files/financal.svg">
+               <h5>Financial Services</h5>
+            </div>
+            <div id="block-content">
+               <ul style="text-align: left; list-style-type: none; width: 100%;">
+                  <li>- The best products start<br>  
+                     with Figma</li>
+                  <li>- Design with real data</li>
+                  <li>- Lightning fast prototyping</li>
+                  <li>- Fastest way to organize</li>
+                  <li>- Work at the speed of thought.</li>
+                  <a>Learn More</a>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section style="background-color: #FAFAFA;">
+         <h2>Who We Are</h2>
+         <p style="margin-bottom: 80px; font-weight: 500; font-size: 14px; color: #737373;">Problems trying to resolve the conflict between<br>
+            the two major realms of Classical physics: Newtonian mechanics </p>
+         <video controls style="background-color: #212534; position: relative; z-index: 1; width: 80%; height: 400px;">
+            <source src="files/IMG_2618.MOV">
+         </video>
+         <div style="position: absolute; width: 100%; background-color: black; height: 350px; left: 0px; z-index: 0; transform: translateY(-270px);">
+         </div>
+   </section>
+   <section id="reviews" style="background: #F3F3F3;">
+       <h2>What Our Clients Say</h2>
+       <p style="margin-bottom: 80px; font-weight: 500; font-size: 14px; color: #737373;">Problems trying to resolve the conflict between<br>
+         the two major realms of Classical physics: Newtonian mechanics </p>
+         <div style="display: flex; justify-content: center;">
+       <div class="review">
+           <div>
+            <div>
+               <img src="files/star.svg">
+               <img src="files/star.svg">
+               <img src="files/star.svg">
+               <img src="files/star.svg">
+               <img src="files/empty-star.svg">
+            </div>
+            <p>Slate helps you see how many<br>
+               more days you need to work to<br> 
+               reach your financial goal.</p>
+            <div class="author">
+               <img src="files/woman.png" style="width: 50px; height: 50px;">
+               <div class="profile">
+                  <span style="color: #FF7B47;">Regina Miles</span><br>
+                  <span>Designer</span>
+               </div>
+            </div>
+           </div>
+       </div>
+       <div class="review">
+         <div>
+            <div>
+               <img src="files/star.svg">
+               <img src="files/star.svg">
+               <img src="files/star.svg">
+               <img src="files/star.svg">
+               <img src="files/empty-star.svg">
+         </div>
+            <p>Slate helps you see how many<br>
+               more days you need to work to<br> 
+               reach your financial goal.</p>
+               <div class="author">
+                  <img src="files/woman.png" style="width: 50px; height: 50px;">
+                  <div class="profile">
+                     <span style="color: #FF7B47;">Regina Miles</span><br>
+                     <span>Designer</span>
+                  </div>
+               </div>
+           </div>
+       </div>
+       <div class="review">
+         <div>
+            <div>
+               <img src="files/star.svg">
+               <img src="files/star.svg">
+               <img src="files/star.svg">
+               <img src="files/star.svg">
+               <img src="files/empty-star.svg">
+         </div>
+      </div>
+            <p>Slate helps you see how many<br>
+               more days you need to work to<br> 
+               reach your financial goal.</p>
+               <div class="author">
+                  <img src="files/man.png" style="width: 50px; height: 50px;">
+                  <div class="profile">
+                     <span style="color: #FF7B47;">Regina Miles</span><br>
+                     <span>Designer</span>
+                  </div>
+               </div>
+         </div>
+       </div>
+   </section>
+   <section class="team">
+      <h2>Meet Our Team</h2>
+       <p style="margin-bottom: 80px; font-weight: 500; font-size: 14px; color: #737373;">Problems trying to resolve the conflict between<br>
+         the two major realms of Classical physics: Newtonian mechanics </p>
+      <div style="display: flex; justify-content: center; gap: 30px  ;">
+         <div class="member">
+            <img src="files/team-woman.png">
+            <div>
+               <p>Яна Цист</p>
+               <p>CO Founder</p>
+               <div>
+                  <img src="files/facebook.png">
+                  <img src="files/instagram.png">
+                  <img src="files/twitter.png">
+               </div>
+            </div>
+         </div>
+         <div class="member">
+            <img src="files/team-man.png">
+            <div>
+               <p>Богдан</p>
+               <p>Consultant</p>
+               <div>
+                  <img src="files/facebook.png">
+                  <img src="files/instagram.png">
+                  <img src="files/twitter.png">
+               </div>
+            </div>
+         </div>
+         <div class="member">
+            <img src="files/team-woman(1).png">
+            <div>
+               <p>Яна Члене</p>
+               <p>CEO</p>
+               <div>
+                  <img src="files/facebook.png">
+                  <img src="files/instagram.png">
+                  <img src="files/twitter.png">
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="appointment" style="background-image: url('files/contact-1.png'); justify-content: left;">
+      <span style="font-size: 16px; font-weight: 700;">Contact Us</span>
+      <h2 style="margin-bottom: 40px; margin-top: 10px;">Make an Appointment</h2>
+       <form>
+         <div>
+           <input type="text" placeholder="Name">
+           <input type="text" placeholder="Email">
+         </div>
+         <div>
+           <select type="text" placeholder="Department">
+            <option>Please Select</option>
+           </select>
+           <select type="text" placeholder="Date">
+            <option>4:00 Available</option>
+           </select>
+         </div>
+           <textarea placeholder="Message"></textarea><br>
+           <button>Book Appointment</button>
+       </form>
+   </section>
+   <section class="Consulting">
+      <div style="text-align: left;">
+         <h2 style="color: #252B42; font-weight: 700; font-size: 24px;">Consulting Agency For Your Business</h2>
+         <p style="color: #737373; font-weight: 500;">the quick fox jumps over the lazy dog</p>
+      </div>
+      <div>
+         <button>Contact Us</button>
+      </div>
+   </section>
+   <footer>
+      <div class="media">
+         <p style="font-weight: 700; font-size: 24px; ">Publist</p>
+         <div style="display: flex; gap: 20px;">
+            <img src="files/facebook.svg" width="24" height="24">
+            <img src="files/instagram.svg" width="24" height="24">
+            <img src="files/twitter.svg" width="24" height="24">
+            <img src="files/youtube.svg" width="24" height="24">
+         </div>
+      </div>
+      <hr style="border-color: #364067;">
+      <div class="information" style="display: flex; gap: 30px; text-align: left;">
+         <div style="width: 148px;">
+            <h5>Company Info</h5>
+            <p>About Us</p>
+            <p>Carrier</p>
+            <p>We are hiring</p>
+            <p>Blog</p>
+         </div>
+         <div style="width: 148px;">
+            <h5>Legal</h5>
+            <p>About Us</p>
+            <p>Carrier</p>
+            <p>We are hiring</p>
+            <p>Blog</p>
+         </div>
+         <div style="width: 148px;">
+            <h5>Features</h5>
+            <p>Business Marketing</p>
+            <p>User Analytic</p>
+            <p>Live Chat</p>
+            <p>Unlimited Support</p>
+         </div>
+         <div style="width: 148px;">
+            <h5>Resources</h5>
+            <p>IOS & Android</p>
+            <p>Watch a Demo</p>
+            <p>Customers</p>
+            <p>API</p>
+         </div>
+         <div>
+            <h5>
+               Get In Touch
+            </h5>
+            <div style="display: flex; border: 1px solid #E6E6E6; border-radius: 5px; height: 58px; width: fit-content;">
+               <input placeholder="Your Email" style="border: none; border-top-left-radius: 4px; border-bottom-left-radius: 4px; padding-left: 20px;">
+               <div style="background: #E6E6E6; height: 100%; width: 1px;"></div>
+               <button style="border-radius: 0px; border-top-right-radius: 4px;border-bottom-right-radius: 4px; font-size: 14px; font-weight: 400; width: fit-content; padding: 15px 22px;">Subscribe</button>
+            </div>
+            <p>Lorem impsum dolor amit</p>
+         </div>
+      </div>
+   </footer>
+   <div class="copyright"><p style="margin: 0; color: #FFFFFF; font-weight: 600; size: 14px;">Made With Love By Figmaland All Right Reserved </p></div>
+</body>
+</html>
